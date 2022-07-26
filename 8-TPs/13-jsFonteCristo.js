@@ -7,7 +7,35 @@ c.	Se pedirán un número positivo y se mostrará la cantidad de números divisi
 d.	Se pedirán un número positivo y se mostrará si el número es un número primo o no.
 e.	Se pedirán un número positivo y se mostrará la cantidad de números Primos desde el número ingresado hasta el cero.
 */
-function ComenzarIngreso () 
+function
+NumerosPares ()
 {
- 	
+
+  let num; //numero que me dan como parametro
+  let cantPares;// variable donde cuento cuantos pares hay
+
+  cantPares = 0;
+  num = parseInt (document.getElementById ("txtIdNumero").value);//Guardo en la variable num el numero que pase el cliente
+  if (num >= 0 && !(isNaN (num)))// 1ero es positov? 2do es un numero?
+    {
+      do
+	{
+	  if ((num % 2) == 0)
+	    {cantPares++}
+	  num--;
+	}
+      while (num != 0);
+    }
+  else
+    {
+      alert ("numero no positivo");
+    }
+    if (cantPares != 0)
+    {
+      alert ("Cantidad de numeros pares: " + cantPares);
+    }
+    else
+    {
+        alert("El numero ingresado es 0");
+    }
 }
